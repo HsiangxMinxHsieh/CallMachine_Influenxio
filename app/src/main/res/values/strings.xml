@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Bank Counter</string>
+    <string name="button_text">NEXT %1$d</string>
 </resources>

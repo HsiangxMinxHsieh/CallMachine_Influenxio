@@ -1,6 +1,5 @@
 package com.timmy.callmachine_influenxio
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -9,12 +8,9 @@ import com.timmy.callmachine_influenxio.mvvm.MainViewModel
 import com.timmy.callmachine_influenxio.mvvm.VMFactory
 import com.timmy.callmachine_influenxio.databinding.ActivityMainBinding
 import com.timmy.callmachine_influenxio.mvvm.CounterAdapter
-import com.timmy.callmachine_influenxio.util.logi
 
 class MainActivity : AppCompatActivity() {
-    private val TAG = javaClass.simpleName
     private val activity = this
-    private val context: Context = this
     lateinit var viewModel: MainViewModel
     lateinit var adapter: CounterAdapter
     lateinit var mBinding: ActivityMainBinding
@@ -36,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         adapter = CounterAdapter(viewModel = mBinding.vm as MainViewModel)
 
-        mBinding.btnNext.text = "NEXT ${viewModel.nowProcess}"
+        mBinding.btnNext.text = activity.getString(R.string.button_text).format(viewModel.nowProcess)
         mBinding.rvCounterList.adapter = adapter
     }
 
@@ -51,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         mBinding.btnNext.setOnClickListener {
 
             viewModel.processNew(viewModel.nowProcess)
-            mBinding.btnNext.text = "NEXT ${viewModel.nowProcess}"
+            mBinding.btnNext.text = activity.getString(R.string.button_text).format(viewModel.nowProcess)
         }
 
         viewModel.listener = object : MainViewModel.ProcessListener {
