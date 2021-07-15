@@ -5,19 +5,15 @@
 
     <data>
 
-        <import type="android.view.View" />
-
         <variable
             name="cm"
             type="com.timmy.callmachine_influenxio.model.CounterModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         tools:context="com.timmy.callmachine_influenxio.mvvm.CounterAdapter">
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_column"
@@ -110,6 +106,4 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintWidth_percent="@dimen/content_width_percent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </layout>

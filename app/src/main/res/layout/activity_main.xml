@@ -3,12 +3,9 @@
 
     <data>
 
-        <import type="android.view.View" />
-
         <variable
             name="vm"
             type="com.timmy.callmachine_influenxio.mvvm.MainViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
