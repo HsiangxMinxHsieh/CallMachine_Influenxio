@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="content_width_percent">0.9</dimen>
+    <dimen name="ratio_in_column_1">0.2</dimen>
+    <dimen name="ratio_in_column_2">0.55</dimen>
+    <dimen name="text_size">20sp</dimen>
+
+</resources>
