@@ -36,6 +36,7 @@ class MainViewModel() : ViewModel() {
         list.add(CounterModel("Bob"))
         list.add(CounterModel("Cory"))
         list.add(CounterModel("Dora"))
+        list.add(CounterModel("Emily"))
 
         //指定處理CallBack
         list.forEachIndexed { index, counterModel ->
