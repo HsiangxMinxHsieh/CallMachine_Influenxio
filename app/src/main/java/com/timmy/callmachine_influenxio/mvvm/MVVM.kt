@@ -3,14 +3,12 @@ package com.timmy.callmachine_influenxio.mvvm
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ScrollView
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.timmy.callmachine_influenxio.databinding.AdatperCounterBinding
 import com.timmy.callmachine_influenxio.model.CounterModel
-import com.timmy.callmachine_influenxio.util.logi
 
 class VMFactory() : ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
@@ -46,7 +44,7 @@ class MainViewModel() : ViewModel() {
                     listener?.process(index)
                 }
 
-                override fun complete(counterModel: CounterModel, process: Int) {
+                override fun complete() {
                     processNext(wattingList.value ?: return) //找下一個去處理
                     listener?.complete(index)
                 }

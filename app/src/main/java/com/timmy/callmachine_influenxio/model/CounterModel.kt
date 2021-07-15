@@ -6,16 +6,16 @@ import androidx.lifecycle.MutableLiveData
 
 
 data class CounterModel(
-    var counterName: String = "",
+    val counterName: String = "",
     var nowProcess: String = "idle",
-    val processTimeMin :Long = 500L,
+    val processTimeMin: Long = 500L,
     val processTimeMax: Long = 1500L,
-    var hasProcessed: ArrayList<Int> = ArrayList(),
+    val hasProcessed: ArrayList<Int> = ArrayList(),
 ) {
 
     interface ProcessListener {
         fun process()
-        fun complete(counterModel: CounterModel, process: Int)
+        fun complete()
     }
 
     private val processTime
@@ -35,7 +35,7 @@ data class CounterModel(
             hasProcessed.add(nowProcess.toInt())
             nowProcess = "idle"
             updateProccedString()
-            listener?.complete(this, process)
+            listener?.complete()
         }, processTime)
     }
 
