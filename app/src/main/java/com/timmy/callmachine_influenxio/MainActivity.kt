@@ -22,6 +22,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         mBinding = DataBindingUtil.setContentView(activity, R.layout.activity_main)
+        initView()
+
+        initObserver()
+
+        initEvent()
+    }
+
+    private fun initView() {
         mBinding.lifecycleOwner = activity
         mBinding.vm = ViewModelProvider(this, VMFactory()).get(MainViewModel::class.java)
         viewModel = mBinding.vm as MainViewModel
@@ -30,11 +38,16 @@ class MainActivity : AppCompatActivity() {
 
         mBinding.btnNext.text = "NEXT ${viewModel.nowProcess}"
         mBinding.rvCounterList.adapter = adapter
+    }
+
+    private fun initObserver() {
         viewModel.listLiveData.observe(this, {
             adapter.list = it
             adapter.notifyDataSetChanged()
         })
+    }
 
+    private fun initEvent() {
         mBinding.btnNext.setOnClickListener {
 
             viewModel.processNew(viewModel.nowProcess)
@@ -50,6 +63,5 @@ class MainActivity : AppCompatActivity() {
                 adapter.notifyItemChanged(position)
             }
         }
-
     }
 }

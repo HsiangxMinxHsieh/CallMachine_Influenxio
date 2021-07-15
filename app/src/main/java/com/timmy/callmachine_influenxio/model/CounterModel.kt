@@ -6,11 +6,10 @@ import androidx.lifecycle.MutableLiveData
 
 
 data class CounterModel(
-    var id: Int = 0,
     var counterName: String = "",
     var nowProcess: String = "idle",
     val processTimeMin :Long = 500L,
-    val processTimeMax: Long = 4500L,
+    val processTimeMax: Long = 1500L,
     var hasProcessed: ArrayList<Int> = ArrayList(),
 ) {
 

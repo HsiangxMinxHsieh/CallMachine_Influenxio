@@ -34,10 +34,10 @@ class MainViewModel() : ViewModel() {
     init {
         wattingList.postValue(ArrayList())
         val list = ArrayList<CounterModel>()
-        list.add(CounterModel(0, "Amy"))
-        list.add(CounterModel(1, "Bob"))
-        list.add(CounterModel(2, "Cory"))
-        list.add(CounterModel(3, "Dora"))
+        list.add(CounterModel( "Amy"))
+        list.add(CounterModel( "Bob"))
+        list.add(CounterModel( "Cory"))
+        list.add(CounterModel( "Dora"))
         list.forEachIndexed { index, counterModel ->
             counterModel.listener = object : CounterModel.ProcessListener {
                 override fun process() {//通知MainActivity更新畫面
@@ -65,10 +65,8 @@ class MainViewModel() : ViewModel() {
     fun processNext(waitList: ArrayList<Int>) { // 這裡要找到有空的Counter去處理。
 
         listLiveData.value?.filter { it.nowProcess == "idle" }?.getOrNull(0)?.processing(waitList.getOrNull(0) ?: return) ?: return
-
-        waitList.remove(waitList.getOrNull(0) ?: return)
+        waitList.remove(waitList.getOrNull(0) ?: return) // 若沒有空閒者則不會執行到這裡(上方就會return)
         wattingList.postValue(waitList)
-
     }
 }
 
