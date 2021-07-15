@@ -91,7 +91,6 @@ class CounterAdapter(val viewModel: MainViewModel) : RecyclerView.Adapter<Counte
     class ViewHolder private constructor(private val binding: AdatperCounterBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-
         fun bind(item: CounterModel) {
             binding.cm = item
         }
