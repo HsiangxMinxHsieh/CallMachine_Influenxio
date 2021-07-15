@@ -44,7 +44,7 @@
 1.找到App目錄下CallMachine_Influenxio\app\src\main\java\com\timmy\callmachine_influenxio\mvvm的MVVM.kt檔案，並雙擊以開啟。</br>
 2.於右側的第35行開始是目前已有的行員，新增方式為在第39行下方新增，例如以下程式碼：</br>
 list.add(CounterModel("Emily"))</br></br>
-<image width = "50%" src = "https://github.com/HsiangxMinxHsieh/CallMachine_Influenxio/blob/master/readmepic/%E4%BF%AE%E6%94%B9%E6%AB%83%E5%8F%B0%E6%95%B8%E9%87%8F3jpg.jpg"/></br>
+<image width = "50%" src = "https://github.com/HsiangxMinxHsieh/CallMachine_Influenxio/blob/master/readmepic/%E4%BF%AE%E6%94%B9%E6%AB%83%E5%8F%B0%E6%95%B8%E9%87%8F3.jpg"/></br>
 3.完成後請再次執行，即可看到新增的行員出現在畫面中。</br>
 </br>
 <h2>程式總行數：</h2>
